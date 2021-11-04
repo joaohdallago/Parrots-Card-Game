@@ -6,23 +6,34 @@ function startGame() {
     const validNumbersOfCards = [4, 6, 8, 10, 12, 14];
 
     while (!validNumbersOfCards.includes(numberOfCards)) {
-        numberOfCards = parseInt(prompt('insira o numero de cartas'))
+        numberOfCards = parseInt(prompt('insert a valid number of cards'))
     }
+
+    const parrotsList = ['bobrossparrot', 'explodyparrot', 'fiestaparrot', 'metalparrot', 'revertitparrot', 'tripletsparrot', 'unicornparrot']
+
+    parrotsList.sort(() => Math.random() - 0.5);
+
+    let inGameParrots = parrotsList.slice(0, (numberOfCards/2));
+
+    inGameParrots.forEach(parrot => inGameParrots.push(parrot));
+
+    inGameParrots.sort(() => Math.random() - 0.5)
 
     const main = document.querySelector('main');
 
-    for (let i = 0; i < numberOfCards; i++) {
+    inGameParrots.forEach(parrot => {
         main.innerHTML += `
         <div class="card" onclick="flipCard(this)">
             <div class="front-face face">
                 <img src="/assets/front.png" alt="front-face">
             </div>
             <div class="back-face face">
-                Verso
+            <img src="/assets/${parrot}.gif" alt="${parrot}">
             </div>
         </div>
         `
-    }
+    })
+
 }
 
 function flipCard(card) {

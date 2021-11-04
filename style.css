@@ -28,10 +28,7 @@ main {
     display: flex;
     flex-flow: column wrap;
     gap: 34px;
-    align-items: center;
     align-content: center;
-
-    background-color: blue;
 }
 
 .card {
@@ -78,5 +75,3 @@ main {
   .card.flipped .front-face {
     transform: rotateY(-180deg);
   }
-
-  
