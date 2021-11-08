@@ -35,7 +35,7 @@ main {
 }
 
 .timer {
-    position: fixed;
+    position: absolute;
     top: 7px;
     right: 50px;
 
