@@ -97,6 +97,12 @@ main {
         line-height: 42px;
     }
 
+    .timer {
+        top: 120px;
+        right: 0;
+        left: 0;
+    }
+
     main {
         flex-direction: column;
     }
