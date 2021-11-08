@@ -10,7 +10,7 @@ body {
     background-color: #EDF3BF;
 }
 
-h1 {
+h1, .timer {
     font-size: 56px;
     line-height: 66px;
     letter-spacing: -0.004em;
@@ -23,12 +23,26 @@ h1 {
 }
 
 main {
-    height: 326px;
+    width: 70%;
 
     display: flex;
-    flex-flow: column wrap;
+    flex-wrap: wrap;
     gap: 34px;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.timer {
+    position: fixed;
+    top: 7px;
+    right: 50px;
+
+    margin: 0;
+
+    font-size: 36px;
+    line-height: initial;
 }
 
 .card {
@@ -75,3 +89,16 @@ main {
   .card.flipped .front-face {
     transform: rotateY(-180deg);
   }
+
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+}
